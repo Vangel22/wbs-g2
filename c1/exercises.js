@@ -21,11 +21,11 @@ const person = {
 
 // console.log(person.info());
 
-// const students = ["Eric", "John", "Jessy"];
+const students = ["Eric", "John", "Jessy"];
 
 // find
 const resFind = students.find((student) => student === "Eric");
-console.log(resFind);
+// console.log(resFind);
 
 // map
 const resMap = students.map((student) => {
@@ -35,16 +35,16 @@ const resMap = students.map((student) => {
   return student;
 });
 
-console.log(resMap);
+// console.log(resMap);
 
 // ['E','r','i','c'] -> char array
 
 // filter
 
 const resFilter = students.filter((student) => student.charAt(0) !== "E");
-console.log(resFilter);
+// console.log(resFilter);
 
-const students = [
+const studentsData = [
   {
     ime: "John",
     fakultet: "FINKI",
@@ -81,9 +81,39 @@ const students = [
     prosek: 6.6,
     grad: "Skopje",
   },
+  {
+    ime: "Petar",
+    fakultet: "FINKI",
+    prosek: 9.0,
+    grad: "Bitola",
+  },
 ];
 
 // Task 1: Find all students from Skopje, print names
+const allStudents = studentsData.filter((student) => student.grad === "Skopje");
 // Task 2: Get all students ascending by prosek
+const allStudentsProsek = studentsData
+  .map((student) => student)
+  .sort((a, b) => a.prosek - b.prosek);
 // Task 3: Find best student from FINKI
+const studentsByFakultetProsek = studentsData
+  .filter((student) => student.fakultet === "FINKI")
+  .sort((a, b) => a.prosek - b.prosek);
+
+const bestStudentFinki =
+  studentsByFakultetProsek[studentsByFakultetProsek.length - 1];
 // Task 4: Find best student from Skopje
+
+const studentsByGradProsek = studentsData
+  .filter((student) => student.grad === "Bitola")
+  .sort((a, b) => a.prosek - b.prosek);
+// sort a < b
+// a > b
+// a === b
+
+const bestStudentBitola = studentsByGradProsek[studentsByGradProsek.length - 1];
+
+console.log("Site studenti od Skopje", allStudents);
+console.log("Site studenti spored prosek", allStudentsProsek);
+console.log("Najdobar student na FINKI", bestStudentFinki);
+console.log("Najdobar student vo Bitola", bestStudentBitola);
