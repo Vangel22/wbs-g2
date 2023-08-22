@@ -4,3 +4,5 @@
 function calculator() {
   // switch ili if blokovi
 }
+
+// calculator('mnozenje', 2,2)
