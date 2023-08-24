@@ -40,13 +40,24 @@ const addPerson = async (id, firstname, lastname) => {
   }
 };
 
-const removePerson = async (id) => {};
+const removePerson = async (id) => {
+  try {
+    const data = await readData("./data");
+    const out = data.filter((person) => person.id !== id);
+    await writeData(out, "./data");
+  } catch (err) {
+    throw err;
+  }
+};
 
 //IIFE
 (async function () {
   await addPerson(4, "Semos", "Education");
   await addPerson(5, "Petar", "EdenDva");
+  await removePerson(4);
 })();
+
+// Napisete go ova so obicna funkcija
 
 // Remove
 
