@@ -154,8 +154,3 @@ const removeCar = async (id) => {
 
 // JSON.parse - od JSON vo JS
 // JSON.stringify - od objekt vo JSON
-
-// Homework
-// Define 5 different REST Resources - JSON -
-// user.json, books.json, cars.json, locations.json, products.json
-// CRUD for ONE of the models (use readData and writeData)
