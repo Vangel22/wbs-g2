@@ -1,0 +1,19 @@
+// client - pobaruva resurs na internet od serverot
+// server - go opsluzuva toj klient
+
+// HTTP/HTTPS
+
+
+
+// const CACHE = {};
+
+// function cacheFun(sector, year) {
+//     CACHE = {
+//         sector,
+//         year
+//     }
+// }
+
+// if(!(klient && sector && year)) {
+//     cacheFun()
+// }
