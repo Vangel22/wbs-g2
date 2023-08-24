@@ -57,7 +57,7 @@ const removePerson = async (id) => {
   await removePerson(4);
 })();
 
-// Napisete go ova so obicna funkcija
+// Napisete go ova so obicna funkcija, namesto vo IIFE
 
 // Remove
 
