@@ -40,6 +40,8 @@ const addPerson = async (id, firstname, lastname) => {
   }
 };
 
+const removePerson = async (id) => {};
+
 //IIFE
 (async function () {
   await addPerson(4, "Semos", "Education");
