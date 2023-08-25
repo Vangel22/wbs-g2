@@ -17,8 +17,9 @@ const getAll = async (req, res) => {
 // Napisete go handlerot
 const remove = async (req, res) => {
   try {
-    const id = req.params.id;
-    // your code here...
+    const id = Number(req.params.id);
+    await removeCar(id);
+    return res.status(200).send("Car deleted!");
   } catch (err) {
     console.log(err);
     return res.status(500).send("Internal Server Error");

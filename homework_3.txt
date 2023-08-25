@@ -1,0 +1,4 @@
+1. Napravete gi funkciite od prethodniot cas da rabotat so handleri
+2. Testirajte gi CRUD funkciite preku POSTMAN
+3. Demonstrirajte i objasnete go procesot vo tekot na naredniot cas
+
