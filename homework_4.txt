@@ -1,0 +1,12 @@
+1. Create a model in mongoose for users
+    - email, password, firstName, lastName,username, dateOfBirth, embg
+2. Create route to create at least one user
+3. Make handler to get user info ( without password ) 
+
+- Dva metodi vo handler i vo mongo
+    1. GET - za zemanje korisnik
+    2. POST - za kreiranje korisnik
+
+* Bonus:
+    - Procitajte za node-input-validator
+    - Link za paketot: https://www.npmjs.com/package/node-input-validator
