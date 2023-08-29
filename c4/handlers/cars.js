@@ -1,4 +1,9 @@
-const { addCar, getAllCars, removeCar, updateCar } = require("../pkg/cars");
+const {
+  addCar,
+  getAllCars,
+  removeCar,
+  updateCar,
+} = require("../pkg/cars/mongo");
 
 const getAll = async (req, res) => {
   try {

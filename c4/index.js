@@ -7,7 +7,6 @@ api.use(express.json());
 
 api.get("/cars", getAll);
 api.get("/cars/:id", getById);
-
 api.delete("/cars/:id", remove);
 
 api.listen(10000, (err) => {
