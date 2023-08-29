@@ -2,7 +2,7 @@
     "development": {
         "port": 10000,
         "MONGO_USERNAME": "Vangel22",
-        "MONGO_PASSWORD": "xxx"
+        "MONGO_PASSWORD": "test123"
     },
     "production": {
         "port": 8080,
