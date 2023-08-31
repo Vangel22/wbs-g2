@@ -55,13 +55,13 @@ const refreshToken = async (req, res) => {};
 const forgotPassword = async (req, res) => {};
 
 const resetPassword = async (req, res) => {
-  // user must be logged in to request password change -- ignore
   // korisnikot si go znae svojot password i pobaruva da bide promenet
   // proverete go stariot password dali e ist so noviot
   // old password - req.body.old_password
   // new password - req.body.new_password
   // Incorrect password
   // New password cannot be old password
+  // ako prethodnite proverki se uspesni povikaj ja setNewPassword
 };
 
 module.exports = {
