@@ -48,7 +48,21 @@ const login = async (req, res) => {
   }
 };
 
-const register = async (req, res) => {};
+const register = async (req, res) => {
+  try {
+    await validate(req.body, Account);
+    const exists = await account.getByEmail(req.body.email);
+    if (exists) {
+      return res.status(400).send("Account with this email already exists!");
+    }
+    req.body.password = bcrypt.hashSync(req.body.password);
+    const acc = await account.create(req.body);
+    return res.status(201).send(acc);
+  } catch (err) {
+    console.log(err);
+    return res.status(err.status).send(err.error);
+  }
+};
 
 const refreshToken = async (req, res) => {};
 
