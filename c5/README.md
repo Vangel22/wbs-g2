@@ -20,6 +20,7 @@
     - Процес:
         Plain text -> Hashing Algorithm (bcrypt) -> Hashed text
     - Алгоритам - Blowfish cipher algorithm
+    - Ќе го користиме за да ја потврдиме лозинката
 
 ### JWT - JSON Web Token
 
@@ -47,3 +48,12 @@
         3. Signature - го зема енкодираниот header, payload и secret и прави потпис на следниот начин
             - HMACSHA256(base64UrlEncode(header) + "." +base64UrlEncode(payload),secret)
             - Потписот ни служи за да се осигураме дека оригиналната порака не била променета на пат кон крајниот корисник
+
+### Packets
+
+    - bcryptjs
+    - node-input-validator
+    - express
+    - mongoose
+    - jsonwebtoken
+    - express-jwt
