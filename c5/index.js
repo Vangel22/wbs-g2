@@ -4,7 +4,7 @@ const { expressjwt: jwt } = require("express-jwt");
 const config = require("./pkg/config");
 require("./pkg/db");
 
-const { login } = require("./handlers/auth");
+const { login, resetPassword } = require("./handlers/auth");
 
 const api = express();
 
@@ -15,12 +15,13 @@ api.use(
     secret: config.getSection("development").jwt,
     algorithms: ["HS256"],
   }).unless({
-    path: ["/api/v1/auth/login"],
+    path: ["/api/v1/auth/login", "/api/v1/auth/resetPassword"],
   })
 );
 
 // api.get('/users', ) -> mi treba tuka jwt bidejki users mozeme da gi zememe samo ako sme najaveni
 api.post("/api/v1/auth/login", login);
+api.post("/api/v1/auth/resetPassword", resetPassword);
 
 api.use(function (err, req, res, next) {
   if (err.name === "UnauthorizedAccess") {
