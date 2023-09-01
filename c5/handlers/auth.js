@@ -12,6 +12,7 @@ const config = require("../pkg/config");
 const login = async (req, res) => {
   try {
     await validate(req.body, AccountLogin);
+    // await validate(req.body, { "email": "required|email" })
     const { email, password } = req.body;
 
     const account = await accounts.getByEmail(email);
