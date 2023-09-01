@@ -50,7 +50,7 @@ const login = async (req, res) => {
 
 const register = async (req, res) => {
   try {
-    await validate(req.body, Account);
+    await validate(req.body, AccountSignUp);
     const exists = await account.getByEmail(req.body.email);
     if (exists) {
       return res.status(400).send("Account with this email already exists!");
