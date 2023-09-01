@@ -1,0 +1,14 @@
+- Izrabotka na monoliten servis auth+food recipies so multitenant opcii
+
+- Model za account - go imame
+- Napravete 2 korisnika koi ke imaat po 3 recepti
+- Vo account treba da dodame relacija za recept modelot
+
+- Polinja za recept:
+    1. title - string
+    2. ingredients - [string]
+    3. instructions - string
+    4. prepTime - number
+    5. cookTime - number
+    6. servings - number
+    7. account_id - ObjectId
