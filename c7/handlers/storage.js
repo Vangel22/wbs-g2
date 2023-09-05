@@ -65,14 +65,32 @@ const listFiles = async (req, res) => {
   // Dali userDirPath postoi -> dokolku ne korisnikot nema uploads
   // fs.readdirSync(userDirPath)
   //   res.status(200).send({ msg: "Uploaded files", files })
+
+  const userDir = `user_${req.auth.id}`;
+  const userDirPath = `${__dirname}/../uploads/${userDir}`;
+
+  if (!fs.existsSync(userDirPath)) {
+    return res.status(400).send("You don't have any uploads yet!");
+  }
+
+  const files = fs.readdirSync(userDirPath);
+  return res.status(200).send(files);
 };
 
 // removeFiles
-const removeFiles = async (req, res) => {};
+const removeFiles = async (req, res) => {
+  // Proverka dali postoi nekoj direktorium vo uploads
+  // Dokolku postoi daj mi ja patekata
+  // Dali ima fajlovi vo toj direktorium
+  // Bonus -> dokolku nema fajlovi posle brisenjeto na fajlot izbrisi go i direktoriumot
+  // Hint: filename kako req.param
+  // rezultat treba da bide imeto na izbrisaniot fajl, i dokolku se izbrise direktoriumot i negovoto ime
+};
 
 module.exports = {
   upload,
   download,
+  listFiles,
 };
 
 // req.files -> body

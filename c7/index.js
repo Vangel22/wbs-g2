@@ -13,7 +13,7 @@ const {
   refreshToken,
   forgotPassword,
 } = require("./handlers/auth");
-const { upload, download } = require("./handlers/storage");
+const { upload, download, listFiles } = require("./handlers/storage");
 
 const api = express();
 
@@ -42,6 +42,7 @@ api.post("/api/v1/auth/resetPassword", resetPassword);
 
 api.post("/api/v1/storage", upload);
 api.get("/api/v1/storage/:filename", download);
+api.get("/api/v1/storage", listFiles);
 
 api.use(function (err, req, res, next) {
   if (err.name === "UnauthorizedAccess") {
